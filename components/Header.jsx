@@ -15,9 +15,9 @@ const Header = () => {
         </h1>
         </Link>
         {/* deskop nav*/}
-        <div className="hidden xl:flex items-center gap-8 ">
+        <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
+          <Link href="/">
             <Button> Adopt me</Button>
           </Link>
         </div>
