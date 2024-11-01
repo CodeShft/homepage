@@ -1,2 +1,2 @@
-This project was developed with Next.js. 
-Netlify Link : https://lokumpage.netlify.app/
+This project was developed with Next.js. Netlify Link : https://lokumpage.netlify.app/
+
