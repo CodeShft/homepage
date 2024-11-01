@@ -18,7 +18,7 @@ const Photo = () => {
           opacity: 1,
           transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
         }}
-        className="w-60 h-60 mix-blend-lighten absolute xl:w-[400px] xl:h-[400px]"
+        className="w-56 h-56 mix-blend-lighten absolute xl:w-[400px] xl:h-[400px]"
       >
         <Image
           src="/lokum.jpg"
