@@ -38,6 +38,7 @@ export default function Resume() {
             <TabsTrigger value="nationality">Nationality</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
+
           {/* container */}
           <div className="min-h-[70vh] w-full">
             <TabsContent value="name" className="w-full">
@@ -45,9 +46,9 @@ export default function Resume() {
             </TabsContent>
 
             <TabsContent value="nationality" className="w-full">
-             nationality
+              nationality
             </TabsContent>
-            
+
             <TabsContent value="about" className="w-full">
               about
             </TabsContent>
