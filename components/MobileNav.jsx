@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
+import work from "@/app/work/page";
 
 const links = [
   {
@@ -27,7 +28,7 @@ const links = [
     path: "/resume",
   },
 ];
-
+;
 const MobileNav = () => {
   const pathname = usePathname();
   return (
@@ -37,7 +38,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/*logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="mt-32 mb-40 text-center text-2xl ">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
               Lokum<span className="text-amber-700">.</span>
