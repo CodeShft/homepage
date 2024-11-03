@@ -43,6 +43,14 @@ export default function Resume() {
             <TabsContent value="name" className="w-full">
               name
             </TabsContent>
+
+            <TabsContent value="nationality" className="w-full">
+             nationality
+            </TabsContent>
+            
+            <TabsContent value="about" className="w-full">
+              about
+            </TabsContent>
           </div>
         </Tabs>
       </div>
