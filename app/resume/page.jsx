@@ -8,8 +8,8 @@ const about = {
 
   info: [
     {
-      fieldName: "Name",
-      fieldValue: "Lokum",
+      fieldName: "Vaccinations",
+      fieldValue: "Vaccination dates",
     },
     {
       fieldName: "Nationality",
@@ -30,7 +30,7 @@ export default function Resume() {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="name"
+          defaultValue="vaccinations"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
