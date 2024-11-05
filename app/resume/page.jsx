@@ -40,7 +40,7 @@ export default function Resume() {
           </TabsList>
 
           {/* container */}
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[80vh] w-full">
             <TabsContent value="vaccinations" className="w-full">
              <li>
              2021 Karma Vaccine
