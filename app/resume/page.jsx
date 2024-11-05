@@ -34,15 +34,26 @@ export default function Resume() {
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="name">Name</TabsTrigger>
+            <TabsTrigger value="vaccinations">Vaccination dates</TabsTrigger>
             <TabsTrigger value="nationality">Nationality</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
           {/* container */}
           <div className="min-h-[70vh] w-full">
-            <TabsContent value="name" className="w-full">
-              name
+            <TabsContent value="vaccinations" className="w-full">
+             <li>
+             2021 Karma Vaccine
+             </li>
+             <li>
+             2022 rabies vaccine
+             </li>
+            <li>
+             2023 leukemia vaccine
+             </li>
+             <li>
+             2024 internal and external parasite vaccines
+             </li>
             </TabsContent>
 
             <TabsContent value="nationality" className="w-full">
