@@ -46,13 +46,13 @@ export default function Resume() {
              2021 Karma Vaccine
              </li>
              <li>
-             2022 rabies vaccine
+             2022 Rabies vaccine
              </li>
             <li>
-             2023 leukemia vaccine
+             2023 Leukemia vaccine
              </li>
              <li>
-             2024 internal and external parasite vaccines
+             2024 Internal and external parasite vaccines
              </li>
             </TabsContent>
 
