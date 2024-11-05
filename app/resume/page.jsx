@@ -42,18 +42,10 @@ export default function Resume() {
           {/* container */}
           <div className="min-h-[70vh] w-full">
             <TabsContent value="vaccinations" className="w-full">
-             <li>
-             2021 Karma Vaccine
-             </li>
-             <li>
-             2022 Rabies vaccine
-             </li>
-            <li>
-             2023 Leukemia vaccine
-             </li>
-             <li>
-             2024 Internal and external parasite vaccines
-             </li>
+              <li>2021 Karma Vaccine</li>
+              <li>2022 Rabies vaccine</li>
+              <li>2023 Leukemia vaccine</li>
+              <li>2024 Internal and external parasite vaccines</li>
             </TabsContent>
 
             <TabsContent value="nationality" className="w-full">
