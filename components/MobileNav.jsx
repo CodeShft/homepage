@@ -5,11 +5,6 @@ import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
 
 const links = [
-  { 
-    name: "Lokum.",
-    path: "/",
-    isLogo: true,  // Add a flag to differentiate the logo from other links
-  },
   {
     name: "Home",
     path: "/",
