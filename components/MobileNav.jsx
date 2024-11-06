@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const links = [
   {
-    name: "Home",
+    name: "Home, Lokum.",
     path: "/",
   },
   {
