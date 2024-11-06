@@ -5,11 +5,11 @@ import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
 
 const links = [
-
   { 
-    name:"Lokum.",
-    path:"/",
-    },
+    name: "Lokum.",
+    path: "/",
+    isLogo: true,  // Add a flag to differentiate the logo from other links
+  },
   {
     name: "Home",
     path: "/",
@@ -64,7 +64,7 @@ const MobileNav = () => {
             <Link
               href={link.path}
               key={index}
-              onClick={handleLinkClick} // Close the sheet when a link is clicked
+              onClick={link.isLogo ? undefined : handleLinkClick} // Don't close sheet on logo click
               className={`${
                 link.path === pathname &&
                 "text-amber-700 border-b-2 border-amber-700"
