@@ -41,19 +41,19 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
-        {/* Başlık ekleyin */}
+        {/* Title for accessibility */}
         <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
 
-        {/* Logo ve ana sayfaya yönlendirme */}
+        {/* Logo and home page redirection */}
         <div className="mt-32 mb-40 text-center text-2xl">
-          <Link href="/" onClick={handleLinkClick}>
+          <Link href="/" onClick={handleLinkClick}> {/* Close the menu on logo click */}
             <h1 className="text-4xl font-semibold">
               Lokum<span className="text-amber-700">.</span>
             </h1>
           </Link>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation links */}
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
             <Link
