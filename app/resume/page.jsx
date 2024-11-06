@@ -19,6 +19,7 @@ const about = {
 };
 
 export default function Resume() {
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}

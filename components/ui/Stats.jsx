@@ -22,11 +22,6 @@ const stats = [
     num: 4,
     text: "A neutered cat",
   },
-
-  {
-    num: 5,
-    text: "Full vaccined",
-  },
 ];
 
 const Stats = () => {

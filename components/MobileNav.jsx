@@ -1,6 +1,6 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"; // Gerekirse SheetTitle ekleyin
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -35,14 +35,17 @@ const MobileNav = () => {
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}> {/* Pass open and onOpenChange to control Sheet's state */}
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger
         className="flex justify-center items-center"
-        onClick={() => setIsOpen(true)} // Open the sheet when the hamburger menu is clicked
+        onClick={() => setIsOpen(true)}
       >
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
+        {/* Başlık ekleyin */}
+        <SheetTitle className="sr-only">Mobil Menü</SheetTitle> {/* Bu başlık gizlenecek ancak ekran okuyucular tarafından okunacak */}
+        
         {/* Logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
