@@ -5,6 +5,11 @@ import { CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
 
 const links = [
+
+  { 
+    name:"Lokum.",
+    path:"/",
+    }
   {
     name: "Home",
     path: "/",
