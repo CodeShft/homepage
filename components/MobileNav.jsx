@@ -1,6 +1,4 @@
-"use client";
-
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"; // Gerekirse SheetTitle ekleyin
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -26,7 +24,7 @@ const links = [
 ];
 
 const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to track if the sheet is open
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   // Function to close the sheet when a link is clicked
@@ -44,16 +42,17 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/* Başlık ekleyin */}
-        <SheetTitle className="sr-only">Mobil Menü</SheetTitle> {/* Bu başlık gizlenecek ancak ekran okuyucular tarafından okunacak */}
-        
-        {/* Logo */}
+        <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
+
+        {/* Logo ve ana sayfaya yönlendirme */}
         <div className="mt-32 mb-40 text-center text-2xl">
-          <Link href="/">
+          <Link href="/" onClick={handleLinkClick}>
             <h1 className="text-4xl font-semibold">
               Lokum<span className="text-amber-700">.</span>
             </h1>
           </Link>
         </div>
+
         {/* Navigation */}
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
