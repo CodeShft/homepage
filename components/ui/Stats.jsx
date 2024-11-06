@@ -10,7 +10,7 @@ const stats = [
 
   {
     num: 2,
-    text: "Not an aggressive cat",
+    text: "Not an aggressive",
   },
 
   {
