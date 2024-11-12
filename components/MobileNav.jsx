@@ -14,10 +14,10 @@ const links = [
 ];
 
 const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to track if the sheet is open
+  const [isOpen, setIsOpen] = useState(false); 
   const pathname = usePathname();
 
-  // Function to close the sheet when a link is clicked
+  
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -26,7 +26,7 @@ const MobileNav = () => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger
         className="flex justify-center items-center"
-        onClick={() => setIsOpen(true)} // Open the sheet when the hamburger menu is clicked
+        onClick={() => setIsOpen(true)} 
       >
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
@@ -45,7 +45,7 @@ const MobileNav = () => {
             <Link
               href={link.path}
               key={link.path}
-              onClick={handleLinkClick} // Close the sheet when a link is clicked
+              onClick={handleLinkClick} 
               className={`${
                 link.path === pathname &&
                 "text-amber-700 border-b-2 border-amber-700"
