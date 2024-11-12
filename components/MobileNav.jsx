@@ -1,6 +1,6 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -17,13 +17,12 @@ const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false); 
   const pathname = usePathname();
 
-  
   const handleLinkClick = () => {
     setIsOpen(false);
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}> 
       <SheetTrigger
         className="flex justify-center items-center"
         onClick={() => setIsOpen(true)} 
@@ -31,6 +30,9 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
       <SheetContent className="flex flex-col px-4 py-8">
+        {/* Erişilebilirlik için SheetTitle başlığı eklendi */}
+        <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
+
         {/* Logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/" onClick={handleLinkClick}>
@@ -39,6 +41,7 @@ const MobileNav = () => {
             </h1>
           </Link>
         </div>
+
         {/* Navigation */}
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link) => (
