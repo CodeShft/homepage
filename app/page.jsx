@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Photo from "@/components/ui/Photo";
 import Stats from "@/components/ui/Stats";
 

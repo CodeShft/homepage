@@ -23,9 +23,10 @@ const Photo = () => {
         <Image
           src="/lokum.jpg"
           priority
-          alt=""
+          alt="Profile photo"
           quality={100}
           fill
+          sizes="(max-width: 640px) 14rem, (max-width: 768px) 20rem, (max-width: 1024px) 30rem, 40rem" // Responsive sizes for different breakpoints
           className="rounded-full aspect-square object-cover"
         />
       </motion.div>

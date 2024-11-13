@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import { motion } from "framer-motion";
+
 const about = {
   title: "About me",
   description: "Lorem ipsum",
@@ -70,3 +71,4 @@ export default function Resume() {
     </motion.div>
   );
 }
+
