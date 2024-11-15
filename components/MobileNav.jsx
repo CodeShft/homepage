@@ -9,7 +9,7 @@ import { useState } from "react";
 const links = [
   { name: "Home", path: "/" },
   { name: "features", path: "/features" },
-  { name: "work", path: "/work" },
+  { name: "gallery", path: "/gallery" },
   { name: "resume", path: "/resume" },
 ];
 

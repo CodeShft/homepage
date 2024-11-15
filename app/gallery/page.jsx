@@ -13,7 +13,7 @@ const photos = [
   { image: "/lokum6.jpg" },
 ];
 
-const Work = () => {
+const Gallery = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -50,4 +50,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Gallery;
