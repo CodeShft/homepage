@@ -32,7 +32,7 @@ const Work = () => {
             {photos.map((photo, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-[48%] md:w-[32%] lg:w-[23%] h-[300px] max-h-[300px] aspect-w-1 aspect-h-1"
+                className="relative w-full sm:w-[48%] md:w-[32%] lg:w-[23%] h-[250px] max-h-[250px] aspect-w-1 aspect-h-1"
               >
                 <Image
                   src={photo.image}
