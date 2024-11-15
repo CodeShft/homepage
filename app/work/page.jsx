@@ -32,8 +32,9 @@ const Work = () => {
           </div>
 
           {/* Right Section: Image Slider */}
-          <div className="w-full xl:w-[50%] flex justify-center items-center"> {/* Flex container for centering the swiper */}
-            <div className="w-full xl:w-[100%]"> {/* Adjust width for better centering */}
+          <div className="w-full xl:w-[50%] flex justify-center items-center">
+            {/* Adjust width and add margin to move slider to the left */}
+            <div className="w-full xl:w-[100%] ml-[-55%]"> {/* Add negative margin to move the slider left */}
               <Swiper
                 spaceBetween={10}
                 slidesPerView={1}
