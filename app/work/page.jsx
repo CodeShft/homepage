@@ -1,23 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-
+import React from "react";
 import Image from "next/image";
 
 const photos = [
-  { num: "", image: "/lokum1.jpg" },
-  { num: "", image: "/lokum2.jpg" },
-  { num: "", image: "/lokum3.jpg" },
-  { num: "", image: "/lokum4.jpg" },
+  { image: "/lokum1.jpg" },
+  { image: "/lokum2.jpg" },
+  { image: "/lokum3.jpg" },
+  { image: "/lokum4.jpg" },
+  { image: "/lokum.jpg" },
+  { image: "/lokum5.jpg" },
 ];
 
 const Work = () => {
-  const [photo, setPhoto] = useState(photos[0]);
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -25,38 +21,28 @@ const Work = () => {
       className="min-h-[80vh] flex flex-col justify-center py-10 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[15px]">
+        <div className="flex flex-col xl:flex-row xl:gap-[20px] gap-[20px]">
           {/* Left Section: Photo Details */}
           <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-2 xl:order-none">
-            <div className="text-2xl font-bold mt-4">{photo.title}</div>
+            <div className="text-2xl font-bold mt-4">Photo Gallery</div>
           </div>
 
-          {/* Right Section: Image Slider */}
-          <div className="w-full xl:w-[50%] flex justify-center items-center">
-            {/* Adjust width and add margin to move slider to the left */}
-            <div className="w-full xl:w-[100%] ml-0 sm:ml-[-10%] md:ml-[-15%] lg:ml-[-60%]"> 
-              <Swiper
-                spaceBetween={10}
-                slidesPerView={1}
-                className="xl:h-[400px] mb-14 w-full"
-                onSlideChange={(swiper) => setPhoto(photos[swiper.realIndex])}
+          {/* Right Section: Image Gallery */}
+          <div className="w-full xl:w-[60%] flex flex-wrap gap-6 justify-start items-center">
+            {photos.map((photo, index) => (
+              <div
+                key={index}
+                className="relative w-full sm:w-[48%] md:w-[32%] lg:w-[23%] h-[300px] max-h-[300px] aspect-w-1 aspect-h-1"
               >
-                {photos.map((photo, index) => (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="relative w-full h-[460px]">
-                      <Image
-                        src={photo.image} // Each photo's correct `image` property
-                        layout="responsive" // Maintain aspect ratio of images
-                        width={1200} // Increased the width to make the image bigger
-                        height={800} // Increased the height to make the image bigger
-                        className="object-cover"
-                        alt={`Photo ${index + 1}`} // Alt text for each photo
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                <Image
+                  src={photo.image}
+                  alt={`Photo ${index + 1}`}
+                  layout="fill" // Makes the image fill the container
+                  objectFit="cover" // Ensures images maintain aspect ratio and cover the space
+                  className="rounded-lg" // Optional: adds rounded corners
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
