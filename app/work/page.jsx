@@ -23,12 +23,12 @@ const Work = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[20px] gap-[20px]">
           {/* Left Section: Photo Details */}
-          <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-2 xl:order-none">
+          <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-1 xl:order-none">
             <div className="text-2xl font-bold mt-4">Photo Gallery</div>
           </div>
 
           {/* Right Section: Image Gallery */}
-          <div className="w-full xl:w-[60%] flex flex-wrap gap-6 justify-start items-center">
+          <div className="w-full xl:w-[60%] flex flex-wrap gap-6 justify-start items-center order-2 xl:order-none">
             {photos.map((photo, index) => (
               <div
                 key={index}
