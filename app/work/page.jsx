@@ -9,8 +9,8 @@ const photos = [
   { image: "/lokum2.jpg" },
   { image: "/lokum3.jpg" },
   { image: "/lokum4.jpg" },
-  { image: "/lokum.jpg" },
   { image: "/lokum5.jpg" },
+  { image: "/lokum6.jpg" },
 ];
 
 const Work = () => {
