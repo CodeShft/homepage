@@ -22,45 +22,40 @@ const Work = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-[80vh] flex flex-col justify-center py-10  xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-10 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[15px]"> {/* Reduced gap between the sections */}
+        <div className="flex flex-col xl:flex-row xl:gap-[15px]">
           {/* Left Section: Photo Details */}
-          <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-2 xl:order-none"> {/* Adjusted width */}
-            <div>
-              {/* Outline num */}
-              <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
-                {photo.num}
-              </div>
-            </div>
-            {/* Title of the photo */}
+          <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-2 xl:order-none">
             <div className="text-2xl font-bold mt-4">{photo.title}</div>
           </div>
 
           {/* Right Section: Image Slider */}
-          <div className="w-full xl:w-[50%] flex justify-center items-center"> {/* Adjusted width to make the slider bigger */}
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={1}
-              className="xl:h-[400px] mb-14 w-full"
-              onSlideChange={(swiper) => setPhoto(photos[swiper.realIndex])}
-            >
-              {photos.map((photo, index) => (
-                <SwiperSlide key={index} className="w-full">
-                  <div className="relative w-full h-[460px]"> {/* Fixed height for the image */}
-                    <Image
-                      src={photo.image}  // Her bir fotoğrafın doğru `image` özelliğini kullanıyoruz
-                      layout="responsive" // Maintain aspect ratio of images
-                      width={1200}        // Increased the width to make the image bigger
-                      height={800}        // Increased the height to make the image bigger
-                      className="object-cover"
-                      alt={`Photo ${photo.num}`}  // Alt metin ekledik
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          <div className="w-full xl:w-[50%] flex justify-center items-center"> {/* Flex container for centering the swiper */}
+            <div className="w-full xl:w-[100%]"> {/* Adjust width for better centering */}
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                className="xl:h-[400px] mb-14 w-full"
+                onSlideChange={(swiper) => setPhoto(photos[swiper.realIndex])}
+              >
+                {photos.map((photo, index) => (
+                  <SwiperSlide key={index} className="w-full">
+                    <div className="relative w-full h-[460px]">
+                      <Image
+                        src={photo.image} // Each photo's correct `image` property
+                        layout="responsive" // Maintain aspect ratio of images
+                        width={1200} // Increased the width to make the image bigger
+                        height={800} // Increased the height to make the image bigger
+                        className="object-cover"
+                        alt={`Photo ${index + 1}`} // Alt text for each photo
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>
