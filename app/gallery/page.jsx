@@ -18,10 +18,10 @@ const Gallery = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-[80vh] flex flex-col justify-center py-10 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-5 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[20px] gap-[20px]">
+        <div className="flex flex-col xl:flex-row xl:gap-[10px] gap-[10px]">
           {/* Left Section: Photo Details */}
           <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-1 xl:order-none">
             <div className="text-2xl font-bold mt-4">Photo Gallery</div>
