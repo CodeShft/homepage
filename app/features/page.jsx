@@ -51,7 +51,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="min-h-[50vh] flex flex-col justify-center py-1 relative">
+    <section className="min-h-[40vh] flex flex-col justify-center py-1 relative">
       <div className="container mx-auto">
         {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
