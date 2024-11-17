@@ -26,8 +26,6 @@ const Gallery = () => {
           <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-1 xl:order-none">
             <div className="text-2xl font-bold mt-4">Photo Gallery</div>
           </div>
-
-          {/* Right Section: Image Gallery */}
           <div className="w-full xl:w-[60%] flex flex-wrap gap-6 justify-start items-center order-2 xl:order-none">
             {photos.map((photo, index) => (
               <div
@@ -37,9 +35,9 @@ const Gallery = () => {
                 <Image
                   src={photo.image}
                   alt={`Photo ${index + 1}`}
-                  layout="fill" // Makes the image fill the container
-                  objectFit="cover" // Ensures images maintain aspect ratio and cover the space
-                  className="rounded-lg" // Optional: adds rounded corners
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
                 />
               </div>
             ))}
