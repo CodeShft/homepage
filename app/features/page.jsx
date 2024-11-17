@@ -90,7 +90,7 @@ const Services = () => {
                   y: 0,
                   transition: { delay: 0.4 + index * 0.2, duration: 0.6 },
                 }}
-                className={`flex flex-col justify-center gap-4 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-md mx-auto relative ${cardColor} ${hoverColor}`}
+                className={`flex flex-col justify-center gap-2 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-md mx-auto relative ${cardColor} ${hoverColor}`}
               >
                 {/* Card Content */}
                 <div className="p-2 flex flex-col justify-between h-full relative z-10">
