@@ -11,6 +11,7 @@ const links = [
   { name: "features", path: "/features" },
   { name: "gallery", path: "/gallery" },
   { name: "resume", path: "/resume" },
+  {name: "contact", path: "/contact"}
 ];
 
 const MobileNav = () => {
