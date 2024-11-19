@@ -27,17 +27,17 @@ const Photo = () => (
 
     {/* Animated Circle */}
     <motion.svg
-      className="w-64 h-64 xl:w-[300px] xl:h-[300px]"
+      className="w-[240px] h-[240px] xl:w-[316px] xl:h-[316px]"
       fill="transparent"
-      viewBox="0 0 586 586"
+      viewBox="0 0 500 500"
       xmlns="http://www.w3.org/2000/svg"
     >
       <motion.circle
-        cx="254"
-        cy="254"
-        r="260"
+        cx="250"
+        cy="250"
+        r="240"
         stroke="#c97b1c"
-        strokeWidth="4"
+        strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
         initial={{ strokeDasharray: "24 10 0 0" }}
