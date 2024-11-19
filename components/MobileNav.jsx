@@ -35,7 +35,7 @@ const MobileNav = () => {
         <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
 
         {/* Logo */}
-        <div className="flex justify-center items-center h-20 border-b">
+        <div className="flex justify-center items-center h-20 border-b border-amber-800">
           <Link href="/" onClick={handleLinkClick}>
             <h1 className="text-2xl sm:text-3xl font-semibold"><span className="text-amber-700">Lokum.</span>
             </h1>
@@ -43,13 +43,13 @@ const MobileNav = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col items-center mt-8">
+        <nav className="flex flex-col items-center mt-0">
         {links.map((link) => (
             <Link
               href={link.path}
               key={link.path}
               onClick={handleLinkClick} 
-              className={`w-full py-6 text-center text-lg sm:text-xl capitalize hover:bg-amber-700 transition-all ${
+              className={`w-full py-5 text-center text-lg sm:text-xl capitalize hover:bg-amber-700 transition-all border-b border-gray-700 ${
                 link.path === pathname
                 ? ""
                 : "text-white"
