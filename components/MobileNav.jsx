@@ -31,33 +31,34 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
       <SheetContent className="flex flex-col px-4 py-8 bg-primary fixed top-0 right-0 h-full w-80">
-        {/* Erişilebilirlik için SheetTitle başlığı eklendi */}
+
         <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
 
         {/* Logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="mt-12 mb-8 text-center text-2xl">
           <Link href="/" onClick={handleLinkClick}>
-            <h1 className="text-4xl font-semibold">
-              Lokum.<span className="text-amber-700">Lokum.</span>
+            <h1 className="text-4xl font-semibold text-white">
+              Lokum<span className="text-amber-700">.</span>
             </h1>
           </Link>
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col justify-center items-center gap-8 w-full">
+        <nav className="flex flex-col items-center gap-4">
           {links.map((link) => (
-            <Link
-              href={link.path}
-              key={link.path}
-              onClick={handleLinkClick} 
-              className={`${
-                link.path === pathname
-                  ? "text-amber-700 border-b-2 border-amber-700"
-                  : "text-gray-800"
-              } text-xl capitalize hover:text-amber-700 transition-all w-full text-center`}
-            >
-              {link.name}
-            </Link>
+            <div key={link.path} className="w-full border-b border-gray-700">
+              <Link
+                href={link.path}
+                onClick={handleLinkClick} 
+                className={`${
+                  link.path === pathname
+                    ? "text-amber-700 border-b-2 border-amber-700"
+                    : "text-white"
+                } text-xl capitalize hover:text-amber-700 transition-all w-full text-center block pb-4`}
+              >
+                {link.name}
+              </Link>
+            </div>
           ))}
         </nav>
       </SheetContent>
