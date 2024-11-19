@@ -30,30 +30,31 @@ const MobileNav = () => {
       >
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col px-4 py-8">
+      <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
         {/* Erişilebilirlik için SheetTitle başlığı eklendi */}
         <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
 
         {/* Logo */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <div className="flex justify-center items-center h-20 border-b">
           <Link href="/" onClick={handleLinkClick}>
-            <h1 className="text-4xl font-semibold">
+            <h1 className="text-2xl sm:text-3xl font-semibold">
               Lokum<span className="text-amber-700">.</span>
             </h1>
           </Link>
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col items-center mt-8">
           {links.map((link) => (
             <Link
               href={link.path}
               key={link.path}
               onClick={handleLinkClick} 
-              className={`${
-                link.path === pathname &&
-                "text-amber-700 border-b-2 border-amber-700"
-              } text-xl capitalize hover:text-amber-700 transition-all`}
+              className={`w-full py-4 text-center text-lg sm:text-xl capitalize hover:bg-amber-50 transition-all ${
+                link.path === pathname
+                ? "text-amber-700 font-medium"
+                : "text-gray-600"
+              }`}
             >
               {link.name}
             </Link>
