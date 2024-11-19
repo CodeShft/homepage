@@ -30,30 +30,31 @@ const MobileNav = () => {
       >
         <CiMenuFries className="text-[32px] text-amber-700" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-primary transition-transform duration-300 ease-in-out">
+      <SheetContent className="flex flex-col px-4 py-8 bg-primary fixed top-0 right-0 h-full w-80">
         {/* Erişilebilirlik için SheetTitle başlığı eklendi */}
         <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
 
         {/* Logo */}
-        <div className="flex justify-center items-center h-20 border-b border-amber-800">
+        <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/" onClick={handleLinkClick}>
-            <h1 className="text-2xl sm:text-3xl font-semibold"><span className="text-amber-700">Lokum.</span>
+            <h1 className="text-4xl font-semibold">
+              Lokum.<span className="text-amber-700">Lokum.</span>
             </h1>
           </Link>
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col items-center mt-0">
-        {links.map((link) => (
+        <nav className="flex flex-col justify-center items-center gap-8 w-full">
+          {links.map((link) => (
             <Link
               href={link.path}
               key={link.path}
               onClick={handleLinkClick} 
-              className={`w-full py-5 text-center text-lg sm:text-xl capitalize hover:bg-amber-700 transition-all border-b border-gray-700 ${
+              className={`${
                 link.path === pathname
-                ? ""
-                : "text-white"
-              }`}
+                  ? "text-amber-700 border-b-2 border-amber-700"
+                  : "text-gray-800"
+              } text-xl capitalize hover:text-amber-700 transition-all w-full text-center`}
             >
               {link.name}
             </Link>
