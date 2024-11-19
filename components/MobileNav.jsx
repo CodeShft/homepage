@@ -49,9 +49,9 @@ const MobileNav = () => {
               href={link.path}
               key={link.path}
               onClick={handleLinkClick} 
-              className={`w-full py-4 text-center text-lg sm:text-xl capitalize hover:bg-amber-700 transition-all ${
+              className={`w-full py-6 text-center text-lg sm:text-xl capitalize hover:bg-amber-700 transition-all ${
                 link.path === pathname
-                ? "text-amber-700 font-medium"
+                ? ""
                 : "text-white"
               }`}
             >
