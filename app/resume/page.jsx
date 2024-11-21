@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const about = {
   title: "About me",
@@ -20,6 +21,7 @@ const about = {
 };
 
 export default function Resume() {
+  const [activeTab, setActiveTab] = useState(null);
   
   return (
     <motion.div
@@ -31,44 +33,77 @@ export default function Resume() {
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
-        <Tabs
-          defaultValue="vaccinations"
-          className="flex flex-col xl:flex-row gap-[60px]"
-        >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="vaccinations">Vaccination dates</TabsTrigger>
-            <TabsTrigger value="nationality">Nationality</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
-          </TabsList>
+        <div className="flex flex-col xl:flex-row gap-[60px]">
+          <div className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <button 
+              onClick={() => setActiveTab(activeTab === 'vaccinations' ? null : 'vaccinations')}
+              className={`p-4 rounded-lg text-left ${activeTab === 'vaccinations' ? 'bg-gray-800' : 'bg-gray-700'}`}
+            >
+              Vaccination dates
+            </button>
+            <button 
+              onClick={() => setActiveTab(activeTab === 'nationality' ? null : 'nationality')}
+              className={`p-4 rounded-lg text-left ${activeTab === 'nationality' ? 'bg-gray-800' : 'bg-gray-700'}`}
+            >
+              Nationality
+            </button>
+            <button 
+              onClick={() => setActiveTab(activeTab === 'about' ? null : 'about')}
+              className={`p-4 rounded-lg text-left ${activeTab === 'about' ? 'bg-gray-800' : 'bg-gray-700'}`}
+            >
+              About me
+            </button>
+          </div>
 
           {/* container */}
           <div className="min-h-[80vh] w-full">
-            <TabsContent value="vaccinations" className="w-full">
-             <li>
-             2021 Karma Vaccine
-             </li>
-             <li>
-             2022 Rabies vaccine
-             </li>
-            <li>
-             2023 Leukemia vaccine
-             </li>
-             <li>
-             2024 Internal and external parasite vaccines
-             </li>
-            </TabsContent>
+            {activeTab === 'vaccinations' && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="w-full relative"
+              >
+                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
+                <ul className="space-y-4 bg-gray-800 p-6 rounded-lg shadow-xl relative">
+                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2021 Karma Vaccine</li>
+                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2022 Rabies vaccine</li>
+                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2023 Leukemia vaccine</li>
+                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2024 Internal and external parasite vaccines</li>
+                </ul>
+              </motion.div>
+            )}
 
-            <TabsContent value="nationality" className="w-full">
-              nationality
-            </TabsContent>
+            {activeTab === 'nationality' && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="w-full relative"
+              >
+                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
+                <div className="w-full p-6 bg-gray-800 rounded-lg shadow-xl relative">
+                  Turkish Tekir cat
+                </div>
+              </motion.div>
+            )}
 
-            <TabsContent value="about" className="w-full">
-              about
-            </TabsContent>
+            {activeTab === 'about' && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="w-full relative"
+              >
+                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
+                <div className="w-full p-6 bg-gray-800 rounded-lg shadow-xl relative">
+                  {about.description}
+                </div>
+              </motion.div>
+            )}
           </div>
-        </Tabs>
+        </div>
       </div>
     </motion.div>
   );
 }
-
