@@ -22,85 +22,171 @@ const about = {
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState(null);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+      className="min-h-[40vh] relative overflow-hidden"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[60px]">
-          <div className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <button 
-              onClick={() => setActiveTab(activeTab === 'vaccinations' ? null : 'vaccinations')}
-              className={`p-4 rounded-lg text-left ${activeTab === 'vaccinations' ? 'bg-gray-800' : 'bg-gray-700'}`}
-            >
-              Vaccination dates
-            </button>
-            <button 
-              onClick={() => setActiveTab(activeTab === 'nationality' ? null : 'nationality')}
-              className={`p-4 rounded-lg text-left ${activeTab === 'nationality' ? 'bg-gray-800' : 'bg-gray-700'}`}
-            >
-              Nationality
-            </button>
-            <button 
-              onClick={() => setActiveTab(activeTab === 'about' ? null : 'about')}
-              className={`p-4 rounded-lg text-left ${activeTab === 'about' ? 'bg-gray-800' : 'bg-gray-700'}`}
-            >
-              About me
-            </button>
-          </div>
-
-          {/* container */}
-          <div className="min-h-[80vh] w-full">
-            {activeTab === 'vaccinations' && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="w-full relative"
-              >
-                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
-                <ul className="space-y-4 bg-gray-800 p-6 rounded-lg shadow-xl relative">
-                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2021 Karma Vaccine</li>
-                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2022 Rabies vaccine</li>
-                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2023 Leukemia vaccine</li>
-                  <li className="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">2024 Internal and external parasite vaccines</li>
-                </ul>
-              </motion.div>
-            )}
-
-            {activeTab === 'nationality' && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="w-full relative"
-              >
-                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
-                <div className="w-full p-6 bg-gray-800 rounded-lg shadow-xl relative">
-                  Turkish Tekir cat
-                </div>
-              </motion.div>
-            )}
-
-            {activeTab === 'about' && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="w-full relative"
-              >
-                <div className="absolute w-4 h-4 bg-gray-800 transform rotate-45 left-[-8px] top-6 xl:left-[-8px] xl:top-6" />
-                <div className="w-full p-6 bg-gray-800 rounded-lg shadow-xl relative">
-                  {about.description}
-                </div>
-              </motion.div>
-            )}
+      {/* Animated light beams */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            repeat: Infinity,
+            duration: { base: 12, sm: 10, md: 8, lg: 6 },
+            ease: "linear"
+          }}
+          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
+        />
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            repeat: Infinity,
+            duration: { base: 15, sm: 13, md: 11, lg: 9 },
+            ease: "linear",
+            delay: 2
+          }}
+          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
+        />
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            repeat: Infinity,
+            duration: { base: 14, sm: 12, md: 10, lg: 8 },
+            ease: "linear",
+            delay: 4
+          }}
+          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent block"
+        />
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            repeat: Infinity,
+            duration: { base: 18, sm: 16, md: 14, lg: 12 },
+            ease: "linear",
+            delay: 1
+          }}
+          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
+        />
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            repeat: Infinity,
+            duration: { base: 16, sm: 14, md: 12, lg: 10 },
+            ease: "linear",
+            delay: 3
+          }}
+          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
+        />
+      </div>
+      <div className="container mx-auto px-4 py-8 relative z-10">
+        <div className="flex flex-col w-full max-w-[580px] mx-auto">
+          <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800">
+            <div className="flex flex-col gap-3">
+              {/* Vaccination Button and Content */}
+              <div className="flex flex-col w-full group">
+                <button
+                  onClick={() =>
+                    setActiveTab(
+                      activeTab === "vaccinations" ? null : "vaccinations"
+                    )
+                  }
+                  className={`p-4 text-left transition-all duration-300 ${
+                    activeTab === "vaccinations"
+                      ? "bg-gray-800 rounded-t-lg"
+                      : "bg-gray-700 rounded-lg hover:bg-gray-600"
+                  }`}
+                >
+                  <span className="font-medium">Vaccination dates</span>
+                </button>
+                {activeTab === "vaccinations" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden bg-gray-800 rounded-b-lg"
+                  >
+                    <div className="p-4 space-y-2">
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        2021 Karma Vaccine
+                      </div>
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        2022 Rabies vaccine
+                      </div>
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        2024 Internal and external parasite vaccines
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+              <div className="flex flex-col w-full group">
+                <button
+                  onClick={() =>
+                    setActiveTab(
+                      activeTab === "nationality" ? null : "nationality"
+                    )
+                  }
+                  className={`p-4 text-left transition-all duration-300 ${
+                    activeTab === "nationality"
+                      ? "bg-gray-800 rounded-t-lg"
+                      : "bg-gray-700 rounded-lg hover:bg-gray-600"
+                  }`}
+                >
+                  <span className="font-medium">Nationality</span>
+                </button>
+                {activeTab === "nationality" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden bg-gray-800 rounded-b-lg"
+                  >
+                    <div className="p-4">{about.info[1].fieldValue}</div>
+                  </motion.div>
+                )}
+              </div>
+              <div className="flex flex-col w-full group">
+                <button
+                  onClick={() =>
+                    setActiveTab(activeTab === "about" ? null : "about")
+                  }
+                  className={`p-4 text-left transition-all duration-300 ${
+                    activeTab === "about"
+                      ? "bg-gray-800 rounded-t-lg"
+                      : "bg-gray-700 rounded-lg hover:bg-gray-600"
+                  }`}
+                >
+                  <span className="font-medium">About me</span>
+                </button>
+                {activeTab === "about" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden bg-gray-800 rounded-b-lg"
+                  >
+                    <div className="p-4">{about.description}</div>
+                  </motion.div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
