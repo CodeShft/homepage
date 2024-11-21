@@ -45,7 +45,7 @@ export default function Resume() {
             duration: { base: 12, sm: 10, md: 8, lg: 6 },
             ease: "linear"
           }}
-          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
+          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-pink-500/20"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -56,7 +56,7 @@ export default function Resume() {
             ease: "linear",
             delay: 2
           }}
-          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
+          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-purple-500/15"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -67,7 +67,7 @@ export default function Resume() {
             ease: "linear",
             delay: 4
           }}
-          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent block"
+          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-blue-500/20 block"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -78,7 +78,7 @@ export default function Resume() {
             ease: "linear",
             delay: 1
           }}
-          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
+          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-cyan-500/10"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -89,7 +89,7 @@ export default function Resume() {
             ease: "linear",
             delay: 3
           }}
-          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
+          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-teal-500/15"
         />
       </div>
       <div className="container mx-auto px-4 py-8 relative z-10">
