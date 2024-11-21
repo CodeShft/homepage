@@ -1,6 +1,4 @@
 "use client";
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -45,7 +43,7 @@ export default function Resume() {
             duration: { base: 12, sm: 10, md: 8, lg: 6 },
             ease: "linear"
           }}
-          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-pink-500/20"
+          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -56,7 +54,7 @@ export default function Resume() {
             ease: "linear",
             delay: 2
           }}
-          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-purple-500/15"
+          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -67,7 +65,7 @@ export default function Resume() {
             ease: "linear",
             delay: 4
           }}
-          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-blue-500/20 block"
+          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent block"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -78,7 +76,7 @@ export default function Resume() {
             ease: "linear",
             delay: 1
           }}
-          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-cyan-500/10"
+          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
         />
         <motion.div
           initial={{ x: "-100%" }}
@@ -89,7 +87,7 @@ export default function Resume() {
             ease: "linear",
             delay: 3
           }}
-          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-teal-500/15"
+          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
         />
       </div>
       <div className="container mx-auto px-4 py-8 relative z-10">
@@ -120,15 +118,15 @@ export default function Resume() {
                     className="overflow-hidden bg-gray-800 rounded-b-lg"
                   >
                     <div className="p-4 space-y-2">
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
                         <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                         2021 Karma Vaccine
                       </div>
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
                         <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                         2022 Rabies vaccine
                       </div>
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm transition-all duration-300 hover:translate-x-1">
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
                         <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                         2024 Internal and external parasite vaccines
                       </div>
