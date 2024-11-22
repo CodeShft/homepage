@@ -191,7 +191,7 @@ export default function Resume() {
                   >
                     <div className="p-4">
                       <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
-                        I was born in Ankara in 2018. I was adopted and I'm happy in my home, but I'm looking for a new owner. I will be a very good friend to you.
+                        I was born in Ankara in 2018. I was adopted and I&apos;m happy in my home, but I&apos;m looking for a new owner. I will be a very good friend to you.
                       </div>
                     </div>
                   </motion.div>
