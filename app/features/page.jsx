@@ -153,7 +153,6 @@ const Services = () => {
           bottom: 0;
           pointer-events: none;
         }
-
         .cat {
           width: 80px;
           height: 80px;
