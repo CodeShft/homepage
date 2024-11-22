@@ -52,7 +52,7 @@ const Services = () => {
 
   return (
     <section className="min-h-[20vh] flex flex-col justify-center py-1 relative">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 max-w-3xl">
         {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
           <div
@@ -90,21 +90,21 @@ const Services = () => {
                   y: 0,
                   transition: { delay: 0.4 + index * 0.2, duration: 0.6 },
                 }}
-                className={`flex flex-col justify-center gap-2 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-md mx-auto relative ${cardColor} ${hoverColor}`}
+                className={`flex flex-col justify-center gap-1 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-sm mx-auto relative ${cardColor} ${hoverColor}`}
               >
                 {/* Card Content */}
                 <div className="p-2 flex flex-col justify-between h-full relative z-10">
                   {/* Top Section */}
                   <div className="w-full flex justify-between items-center">
-                    <div className="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 text-black rounded-full font-extrabold text-xl">
+                    <div className="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 text-black rounded-full font-extrabold text-lg">
                       {feature.num}
                     </div>
                     {/* Arrow Button */}
                     <Link
                       href={feature.href || "#"}
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-500 duration-500 flex justify-center items-center hover:rotate-45"
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-500 duration-500 flex justify-center items-center hover:rotate-45"
                     >
-                      <BsArrowDownRight className="text-gray-800 text-xl sm:text-2xl md:text-3xl" />
+                      <BsArrowDownRight className="text-gray-800 text-lg sm:text-xl" />
                     </Link>
                   </div>
                   {/* Title */}
@@ -115,7 +115,7 @@ const Services = () => {
                       y: 0,
                       transition: { delay: 0.6 + index * 0.2, duration: 0.4 },
                     }}
-                    className="text-lg sm:text-xl md:text-2xl font-bold leading-none text-black mt-4"
+                    className="text-base sm:text-lg md:text-xl font-bold leading-none text-black mt-3"
                   >
                     {feature.title}
                   </motion.h2>
@@ -127,7 +127,7 @@ const Services = () => {
                       y: 0,
                       transition: { delay: 0.8 + index * 0.2, duration: 0.4 },
                     }}
-                    className="text-sm sm:text-base md:text-lg text-black mt-2"
+                    className="text-xs sm:text-sm md:text-base text-black mt-2"
                   >
                     {feature.description}
                   </motion.p>
