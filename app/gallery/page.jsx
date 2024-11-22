@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const photos = [
@@ -14,36 +14,87 @@ const photos = [
 ];
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-[80vh] flex flex-col justify-center py-5 xl:px-0"
+      className="py-6 px-4"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[10px] gap-[10px]">
-          {/* Left Section: Photo Details */}
-          <div className="w-full xl:w-[40%] flex flex-col justify-center items-start order-1 xl:order-none">
-            <div className="text-2xl font-bold mt-4">Photo Gallery</div>
-          </div>
-          <div className="w-full xl:w-[60%] flex flex-wrap gap-6 justify-start items-center order-2 xl:order-none">
-            {photos.map((photo, index) => (
-              <div
-                key={index}
-                className="relative w-full sm:w-[48%] md:w-[32%] lg:w-[23%] h-[250px] max-h-[250px] aspect-w-1 aspect-h-1"
-              >
+      <div className="max-w-4xl mx-auto">
+        <motion.h2 
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="text-xl font-semibold mb-4 text-center text-white"
+        >
+          Photo Gallery
+        </motion.h2>
+
+        <motion.div 
+          className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-[600px] mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          {photos.map((photo, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+              className="relative group cursor-pointer"
+              onClick={() => setSelectedImage(photo)}
+            >
+              <div className="relative aspect-square overflow-hidden rounded-lg">
                 <Image
                   src={photo.image}
                   alt={`Photo ${index + 1}`}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-lg"
+                  objectPosition={index === 4 ? "center 70%" : "center"}
+                  className="transform transition-all duration-300 group-hover:scale-105"
+                  priority={index < 6}
                 />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-            ))}
-          </div>
-        </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative">
+              <Image
+                src={selectedImage.image}
+                alt="Selected photo"
+                width={800}
+                height={800}
+                objectFit="contain"
+                priority
+                className="rounded-lg max-h-[80vh] w-auto mx-auto"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -right-12 top-0 text-white bg-black/50 w-10 h-10 text-2xl rounded-lg flex items-center justify-center hover:bg-black/70 transition-colors"
+              >
+                ×
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </motion.section>
   );
 };
