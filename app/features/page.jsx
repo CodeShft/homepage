@@ -140,7 +140,6 @@ const Services = () => {
 
       {/* Cat movement CSS */}
       <style jsx>{`
-        /* Hide the cursor */
         body {
           cursor: none;
         }
@@ -153,15 +152,14 @@ const Services = () => {
           bottom: 0;
           pointer-events: none;
         }
+
         .cat {
           width: 80px;
           height: 80px;
           display: flex;
           justify-content: center;
           align-items: center;
-          position: fixed;
-          background-color: transparent;
-          animation: none;
+          pointer-events: none;
         }
       `}</style>
     </section>
