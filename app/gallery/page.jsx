@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -49,9 +49,9 @@ const Gallery = () => {
                 <Image
                   src={photo.image}
                   alt={`Photo ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition={index === 4 ? "center 70%" : "center"}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  style={{ objectFit: "cover", objectPosition: index === 4 ? "center 70%" : "center" }}
                   className="transform transition-all duration-300 group-hover:scale-105"
                   priority={index < 6}
                 />
@@ -62,39 +62,40 @@ const Gallery = () => {
         </motion.div>
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="relative"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
           >
-            <div className="relative">
-              <Image
-                src={selectedImage.image}
-                alt="Selected photo"
-                width={800}
-                height={800}
-                objectFit="contain"
-                priority
-                className="rounded-lg max-h-[80vh] w-auto mx-auto"
-              />
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -right-12 top-0 text-white bg-black/50 w-10 h-10 text-2xl rounded-lg flex items-center justify-center hover:bg-black/70 transition-colors"
-              >
-                ×
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      )}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative">
+                <Image
+                  src={selectedImage.image}
+                  alt="Selected photo"
+                  width={800}
+                  height={800}
+                  style={{ objectFit: "contain" }}
+                  className="rounded-lg max-h-[80vh] w-auto mx-auto"
+                  priority
+                />
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute -right-12 top-0 text-white bg-black/50 w-10 h-10 text-2xl rounded-lg flex items-center justify-center hover:bg-black/70 transition-colors"
+                >
+                  ×
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 };
