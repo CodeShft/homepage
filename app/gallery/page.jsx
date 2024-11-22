@@ -20,9 +20,9 @@ const Gallery = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="py-6 px-4"
+      className="pt-2 px-4"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto pt-2 px-4 relative z-10">
         <motion.h2 
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

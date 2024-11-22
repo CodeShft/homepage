@@ -90,7 +90,7 @@ export default function Resume() {
           className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
         />
       </div>
-      <div className="container mx-auto px-4 py-8 relative z-10">
+      <div className="container mx-auto pt-2 px-4 relative z-10">
         <div className="flex flex-col w-full max-w-[580px] mx-auto">
           <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800">
             <div className="flex flex-col gap-3">
