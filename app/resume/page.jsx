@@ -156,7 +156,16 @@ export default function Resume() {
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden bg-gray-800 rounded-b-lg"
                   >
-                    <div className="p-4">{about.info[1].fieldValue}</div>
+                    <div className="p-4 space-y-2">
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Turkish Tekir Cat
+                      </div>
+                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
+                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                        Calico Cat
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </div>
@@ -180,7 +189,11 @@ export default function Resume() {
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden bg-gray-800 rounded-b-lg"
                   >
-                    <div className="p-4">{about.description}</div>
+                    <div className="p-4">
+                      <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
+                        I was born in Ankara in 2018. I was adopted and I'm happy in my home, but I'm looking for a new owner. I will be a very good friend to you.
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </div>
