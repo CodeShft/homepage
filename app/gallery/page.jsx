@@ -72,26 +72,18 @@ const Gallery = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="relative"
+              className="relative max-w-full max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
-                <Image
-                  src={selectedImage.image}
-                  alt="Selected photo"
-                  width={800}
-                  height={800}
-                  style={{ objectFit: "contain" }}
-                  className="rounded-lg max-h-[80vh] w-auto mx-auto"
-                  priority
-                />
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute -right-12 top-0 text-white bg-black/50 w-10 h-10 text-2xl rounded-lg flex items-center justify-center hover:bg-black/70 transition-colors"
-                >
-                  ×
-                </button>
-              </div>
+              <Image
+                src={selectedImage.image}
+                alt="Selected photo"
+                width={800}
+                height={800}
+                style={{ objectFit: "contain" }}
+                className="rounded-lg max-h-[85vh] w-auto"
+                priority
+              />
             </motion.div>
           </div>
         )}
