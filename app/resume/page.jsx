@@ -154,12 +154,10 @@ export default function Resume() {
                     className="overflow-hidden bg-gray-800 rounded-b-lg"
                   >
                     <div className="p-4 space-y-2">
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                      <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
                         Turkish Tekir Cat
                       </div>
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                      <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
                         Calico Cat
                       </div>
                     </div>
