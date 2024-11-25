@@ -41,7 +41,7 @@ export default function Resume() {
           transition={{
             repeat: Infinity,
             duration: { base: 12, sm: 10, md: 8, lg: 6 },
-            ease: "linear"
+            ease: "linear",
           }}
           className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
         />
@@ -52,7 +52,7 @@ export default function Resume() {
             repeat: Infinity,
             duration: { base: 15, sm: 13, md: 11, lg: 9 },
             ease: "linear",
-            delay: 2
+            delay: 2,
           }}
           className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
         />
@@ -63,7 +63,7 @@ export default function Resume() {
             repeat: Infinity,
             duration: { base: 14, sm: 12, md: 10, lg: 8 },
             ease: "linear",
-            delay: 4
+            delay: 4,
           }}
           className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent block"
         />
@@ -74,7 +74,7 @@ export default function Resume() {
             repeat: Infinity,
             duration: { base: 18, sm: 16, md: 14, lg: 12 },
             ease: "linear",
-            delay: 1
+            delay: 1,
           }}
           className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
         />
@@ -85,7 +85,7 @@ export default function Resume() {
             repeat: Infinity,
             duration: { base: 16, sm: 14, md: 12, lg: 10 },
             ease: "linear",
-            delay: 3
+            delay: 3,
           }}
           className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
         />
@@ -119,15 +119,12 @@ export default function Resume() {
                   >
                     <div className="p-4 space-y-2">
                       <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                         2021 Karma Vaccine
                       </div>
                       <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
                         2022 Rabies vaccine
                       </div>
-                      <div className="p-3 bg-green-800 rounded-lg flex items-center backdrop-blur-sm">
-                        <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                      <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
                         2024 Internal and external parasite vaccines
                       </div>
                     </div>
@@ -191,7 +188,9 @@ export default function Resume() {
                   >
                     <div className="p-4">
                       <div className="p-3 bg-green-800 rounded-lg backdrop-blur-sm">
-                        I was born in Ankara in 2018. I was adopted and I&apos;m happy in my home, but I&apos;m looking for a new owner. I like making new friends, I am very affectionate.
+                        I was born in Ankara in 2018. I was adopted and I&apos;m
+                        happy in my home, but I&apos;m looking for a new owner.
+                        I like making new friends, I am very affectionate.
                       </div>
                     </div>
                   </motion.div>
