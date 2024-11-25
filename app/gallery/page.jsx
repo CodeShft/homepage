@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const photos = [
-  { image: "/lokum1.jpg" },
+  { image: "/lokumm.jpg" },
   { image: "/lokum2.jpg" },
   { image: "/lokum3.jpg" },
   { image: "/lokum4.jpg" },
