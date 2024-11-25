@@ -36,7 +36,7 @@ const MobileNav = () => {
 
         {/* Logo */}
         <div className="mt-12 mb-8 text-center text-2xl">
-          <Link href="/" onClick={handleLinkClick}>
+          <Link href="/" onClick={handleLinkClick} scroll={false}>
             <h1 className="text-4xl font-semibold text-white border-b border-white pb-2">
               Lokum<span className="text-amber-700">.</span>
             </h1>
@@ -50,6 +50,7 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 onClick={handleLinkClick} 
+                scroll={false}
                 className={`${
                   link.path === pathname
                     ? "text-amber-700 bg-white/10"

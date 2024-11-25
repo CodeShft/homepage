@@ -40,6 +40,7 @@ const Nav = () => {
           <Link
             href={link.path}
             key={index}
+            scroll={false}
             className={`${
               link.path === pathname &&
               "text-amber-700 border-b-2 border-amber-700"
