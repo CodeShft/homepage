@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const photos = [
-  { image: "/lokumm.jpg" },
+  { image: "/lokum5.jpg" },
   { image: "/lokum2.jpg" },
   { image: "/lokum3.jpg" },
   { image: "/lokum4.jpg" },
-  { image: "/lokum5.jpg" },
+  { image: "/lokumm.jpg" },
   { image: "/lokum6.jpg" },
 ];
 
@@ -17,21 +17,37 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="pt-2 px-4"
+      className="pt-0 px-4"
     >
-      <div className="container mx-auto pt-2 px-4 relative z-10">
-        <motion.h2 
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="text-xl font-semibold mb-4 text-center text-white"
+      <div className="container mx-auto pt-0 px-4 relative z-10">
+        <motion.h2
+          initial={{ y: -20, opacity: 0, scale: 0.9 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-xl font-semibold mb-4 text-center tracking-wider animate-gradient"
+          style={{
+            background: "linear-gradient(-60deg, #8B4513, #A0522D, #D2691E, #8B4513)",
+            backgroundSize: "300% 300%",
+            animation: "gradient 8s ease infinite",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent"
+          }}
         >
-          Photo Gallery
+          ✧ Photo Gallery ✧
         </motion.h2>
 
-        <motion.div 
+        <style jsx global>{`
+          @keyframes gradient {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+          }
+        `}</style>
+
+        <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-[600px] mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -51,7 +67,10 @@ const Gallery = () => {
                   alt={`Photo ${index + 1}`}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  style={{ objectFit: "cover", objectPosition: index === 4 ? "center 70%" : "center" }}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: index === 4 ? "center 70%" : "center",
+                  }}
                   className="transform transition-all duration-300 group-hover:scale-105"
                   priority={index < 6}
                 />
@@ -64,7 +83,7 @@ const Gallery = () => {
 
       <AnimatePresence>
         {selectedImage && (
-          <div 
+          <div
             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
@@ -88,7 +107,7 @@ const Gallery = () => {
           </div>
         )}
       </AnimatePresence>
-    </motion.section>
+    </motion.div>
   );
 };
 
