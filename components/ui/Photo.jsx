@@ -7,7 +7,7 @@ const Photo = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { delay: 2, duration: 0.4, ease: "easeIn" } }}
-    className="relative flex justify-center items-center -mt-4 xl:-mt-8"
+    className="relative flex justify-center items-center -mt-14 sm:-mt-4 xl:-mt-8"
   >
     <motion.div
       initial={{ opacity: 0 }}
