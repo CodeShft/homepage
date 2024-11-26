@@ -55,9 +55,9 @@ const Gallery = () => {
           {photos.map((photo, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               className="relative group cursor-pointer"
               onClick={() => setSelectedImage(photo)}
             >
@@ -72,7 +72,8 @@ const Gallery = () => {
                     objectPosition: index === 4 ? "center 70%" : "center",
                   }}
                   className="transform transition-all duration-300 group-hover:scale-105"
-                  priority={index < 6}
+                  priority={true}
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -88,9 +89,10 @@ const Gallery = () => {
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="relative max-w-full max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
@@ -101,7 +103,8 @@ const Gallery = () => {
                 height={800}
                 style={{ objectFit: "contain" }}
                 className="rounded-lg max-h-[85vh] w-auto"
-                priority
+                priority={true}
+                loading="eager"
               />
             </motion.div>
           </div>

@@ -53,9 +53,9 @@ const MobileNav = () => {
                 scroll={false}
                 className={`${
                   link.path === pathname
-                    ? "text-amber-700 bg-white/10"
-                    : "text-white hover:bg-white/5"
-                } text-xl capitalize transition-all duration-300 w-full text-center block py-3 border border-white/40 hover:border-white rounded-md hover:shadow-lg hover:-translate-y-0.5`}
+                    ? "text-amber-700"
+                    : "text-white hover:text-white"
+                } text-xl capitalize transition-all duration-300 w-full text-center block py-3 border-b border-white/20 hover:border-white/40`}
               >
                 {link.name}
               </Link>

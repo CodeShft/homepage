@@ -35,8 +35,8 @@ const Stats = () => {
                 <div className="h-6 sm:h-8 flex items-center">
                   <CountUp
                     end={item.num}
-                    duration={5}
-                    delay={2}
+                    duration={3}
+                    delay={0.4}
                     className="text-xl sm:text-2xl xl:text-3xl font-bold text-amber-500"
                   />
                 </div>

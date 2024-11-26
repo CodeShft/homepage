@@ -6,12 +6,12 @@ import Image from "next/image";
 const Photo = () => (
   <motion.div
     initial={{ opacity: 0 }}
-    animate={{ opacity: 1, transition: { delay: 2, duration: 0.4, ease: "easeIn" } }}
+    animate={{ opacity: 1, transition: { delay: 0.2, duration: 0.4, ease: "easeIn" } }}
     className="relative flex justify-center items-center -mt-14 sm:-mt-4 xl:-mt-8"
   >
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" } }}
+      animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}
       className="w-56 h-56 xl:w-[300px] xl:h-[300px] mix-blend-lighten absolute"
     >
       <Image
