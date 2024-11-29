@@ -36,9 +36,6 @@ export default function Resume() {
         <div
           className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
         />
-        <div
-          className="absolute top-[66vh] hidden md:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-teal-500/15 to-transparent"
-        />
       </div>
       <div className="container mx-auto pt-2 px-4 relative z-10">
         <div className="flex flex-col w-full max-w-[580px] mx-auto">
