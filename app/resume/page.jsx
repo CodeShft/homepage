@@ -22,21 +22,86 @@ export default function Resume() {
 
   return (
     <div className="min-h-[40vh] relative overflow-hidden">
-      {/* Animated light beams */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-[20vh] sm:top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
-        />
-        <div
-          className="absolute top-[40vh] sm:top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
-        />
-        <div
-          className="absolute top-[55vh] sm:top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
-        />
-        <div
-          className="absolute top-[30vh] sm:top-[33vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
-        />
+      {/* Universe Background */}
+      <div className="fixed inset-x-0 bottom-0 h-[70vh] overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary to-transparent">
+          <div className="star-field">
+            <div className="layer"></div>
+            <div className="layer"></div>
+            <div className="layer"></div>
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        .star-field {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform: rotate(-45deg);
+          mask-image: linear-gradient(to top, 
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,1) 50%,
+            rgba(0,0,0,0) 100%
+          );
+        }
+
+        .layer {
+          position: absolute;
+          inset: -100px;
+          animation: shimmer 4s ease-in-out infinite alternate;
+        }
+
+        .layer:nth-child(1) {
+          background-image: 
+            radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 90px 50px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 200px 50px, #fff, rgba(0,0,0,0));
+          background-repeat: repeat;
+          background-size: 200px 200px;
+          animation-delay: 0s;
+          opacity: 1;
+        }
+
+        .layer:nth-child(2) {
+          background-image: 
+            radial-gradient(3px 3px at 50px 80px, #fff, rgba(0,0,0,0)),
+            radial-gradient(3px 3px at 100px 60px, #fff, rgba(0,0,0,0)),
+            radial-gradient(3px 3px at 160px 120px, #fff, rgba(0,0,0,0)),
+            radial-gradient(3px 3px at 200px 90px, #fff, rgba(0,0,0,0)),
+            radial-gradient(3px 3px at 140px 180px, #fff, rgba(0,0,0,0));
+          background-repeat: repeat;
+          background-size: 300px 300px;
+          animation-delay: 1s;
+          opacity: 0.9;
+        }
+
+        .layer:nth-child(3) {
+          background-image: 
+            radial-gradient(4px 4px at 100px 150px, #fff, rgba(0,0,0,0)),
+            radial-gradient(4px 4px at 200px 250px, #fff, rgba(0,0,0,0)),
+            radial-gradient(4px 4px at 300px 200px, #fff, rgba(0,0,0,0)),
+            radial-gradient(4px 4px at 400px 150px, #fff, rgba(0,0,0,0));
+          background-repeat: repeat;
+          background-size: 400px 400px;
+          animation-delay: 2s;
+          opacity: 0.8;
+        }
+
+        @keyframes shimmer {
+          0% {
+            transform: translateX(0) translateY(0);
+          }
+          100% {
+            transform: translateX(-50px) translateY(-50px);
+          }
+        }
+      `}</style>
+
       <div className="container mx-auto pt-2 px-4 relative z-10">
         <div className="flex flex-col w-full max-w-[580px] mx-auto">
           <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800">
