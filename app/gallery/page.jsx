@@ -30,7 +30,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 pt-2 max-w-2xl">
       <h2 className="text-xl font-semibold mb-4 text-center tracking-wider">
         ✧ Photo Gallery ✧
       </h2>
@@ -43,7 +43,7 @@ const Gallery = () => {
         }
       `}</style>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2">
         {photos.map((photo, index) => (
           <div key={index} className="relative group cursor-pointer" onClick={() => setSelectedImage(photo)}>
             <div className="relative aspect-square overflow-hidden rounded-lg">
@@ -51,7 +51,7 @@ const Gallery = () => {
                 src={photo.image}
                 alt={`Photo ${index + 1}`}
                 fill
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes="(max-width: 768px) 30vw, 25vw"
                 style={{
                   objectFit: "cover",
                   objectPosition: index === 4 ? "center 70%" : "center",

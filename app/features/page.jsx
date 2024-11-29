@@ -36,7 +36,7 @@ const features = [
 ];
 
 const Services = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -51,8 +51,8 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="min-h-[20vh] flex flex-col justify-center py-1 relative">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <section className="min-h-[8vh] flex flex-col justify-start pt-0 relative overflow-hidden">
+      <div className="container px-4 max-w-3xl mx-auto">
         {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
           <div
@@ -76,7 +76,7 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-3"
+          className="grid grid-cols-1 gap-2"
         >
           {features.map((feature, index) => {
             const cardColor = colors[index % colors.length];
