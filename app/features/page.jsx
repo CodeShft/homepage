@@ -18,19 +18,19 @@ const features = [
   {
     num: "01",
     title: "Sleeps a lot",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "She sleeps a lot and likes to sleep upstairs and next to you.",
     href: "",
   },
   {
     num: "02",
     title: "Eats too much",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "She is very gluttonous, she can wake you up to eat, especially she loves chips.",
     href: "",
   },
   {
     num: "03",
     title: "Prone to escape",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "You should close the windows and doors, she can escape immediately, she did it before.",
     href: "",
   },
 ];
