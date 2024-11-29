@@ -30,7 +30,7 @@ const features = [
   {
     num: "03",
     title: "Prone to escape",
-    description: "You should close the windows and doors, she can escape immediately, she did it before.",
+    description: "You should close the windows and doors, she can escape immediately.",
     href: "",
   },
 ];
@@ -51,7 +51,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="min-h-[8vh] flex flex-col justify-start pt-0 relative overflow-hidden">
+    <section className="min-h-[8vh] flex flex-col justify-start relative overflow-hidden -mt-4">
       <div className="container px-4 max-w-3xl mx-auto">
         {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
