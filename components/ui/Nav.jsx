@@ -8,7 +8,6 @@ const links = [
     name: "Home",
     path: "/",
   },
-
   {
     name: "Features",
     path: "/features",
@@ -17,12 +16,10 @@ const links = [
     name: "Gallery",
     path: "/gallery",
   },
-
   {
     name: "Resume",
     path: "/resume",
   },
-
   {
     name: "Contact",
     path: "/contact",
@@ -42,9 +39,10 @@ const Nav = () => {
             key={index}
             scroll={false}
             className={`${
-              link.path === pathname &&
-              "text-amber-700 border-b-2 border-amber-700"
-            } capitalize font-medium hover:text-amber-700 transition:all`}
+              link.path === pathname
+                ? "text-amber-700 border-b-2 border-amber-700"
+                : "text-white hover:text-amber-700"
+            } capitalize font-medium transition-all`}
           >
             {link.name}
           </Link>

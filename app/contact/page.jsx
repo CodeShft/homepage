@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 const info_ = [
@@ -62,19 +61,14 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      className="pt-2 w-full bg-[#1d1d21]"
-    >
+    <div className="pt-2 w-full bg-[#1d1d21]">
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
           {/* form */}
           <div className="w-full max-w-xl">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-3 bg-[#27272c] rounded-xl min-h-[280px]">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-3 bg-[#27272c] min-h-[280px]">
               <div className="mb-4">
-                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2">Adopt me 🧡</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2">Do you want to adopt me?</h3>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -132,12 +126,9 @@ const Contact = () => {
                 className="mt-4 h-9 w-full rounded-md bg-[#1d1d21] text-white text-sm font-medium hover:bg-[#2d2d31] transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <span>Contact Information</span>
-                <motion.span
-                  animate={{ rotate: showContactInfo ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <span>
                   <FiChevronDown />
-                </motion.span>
+                </span>
               </button>
 
               {showContactInfo && (
@@ -157,7 +148,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
