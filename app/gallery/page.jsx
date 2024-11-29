@@ -30,8 +30,8 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 pt-0 max-w-2xl">
-      <h2 className="text-xl font-semibold mb-4 text-center tracking-wider">
+    <div className="container mx-auto px-4 -mt-4 sm:mt-0 max-w-2xl">
+      <h2 className="text-xl font-semibold mb-3 sm:mb-4 text-center tracking-wider">
         ✧ Photo Gallery ✧
       </h2>
 

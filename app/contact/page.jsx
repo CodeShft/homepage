@@ -68,7 +68,7 @@ const Contact = () => {
           <div className="w-full max-w-xl">
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-3 bg-[#27272c] min-h-[280px]">
               <div className="mb-4">
-                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2">Do you want to adopt me?</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2">🧡 Do you want to adopt me?</h3>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
