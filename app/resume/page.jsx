@@ -25,16 +25,16 @@ export default function Resume() {
       {/* Animated light beams */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
+          className="absolute top-[20vh] sm:top-[25vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"
         />
         <div
-          className="absolute top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
+          className="absolute top-[40vh] sm:top-[50vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] bg-gradient-to-r from-transparent via-purple-500/15 to-transparent"
         />
         <div
-          className="absolute top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] lg:h-[3px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent block"
+          className="absolute top-[55vh] sm:top-[60vh] w-full h-[1px] sm:h-[1.5px] md:h-[2px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
         />
         <div
-          className="absolute top-[33vh] hidden sm:block w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] lg:h-[2px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
+          className="absolute top-[30vh] sm:top-[33vh] w-full h-[0.5px] sm:h-[1px] md:h-[1.5px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
         />
       </div>
       <div className="container mx-auto pt-2 px-4 relative z-10">
