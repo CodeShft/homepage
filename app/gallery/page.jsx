@@ -77,7 +77,15 @@ const Gallery = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-2">
         {photos.map((photo, index) => (
-          <div key={index} className="relative group cursor-pointer" onClick={() => setSelectedImage(photo)}>
+          <div 
+            key={index} 
+            className="relative group cursor-pointer" 
+            onClick={() => {
+              if (preloadedImages[photo.image]) {
+                setSelectedImage(photo);
+              }
+            }}
+          >
             <div className="relative aspect-square overflow-hidden rounded-lg">
               {!preloadedImages[photo.image] && <LoadingSpinner />}
               <Image
@@ -89,9 +97,17 @@ const Gallery = () => {
                   objectFit: "cover",
                   objectPosition: index === 4 ? "center 70%" : "center",
                 }}
-                className="transform transition-all duration-300 group-hover:scale-105"
-                priority={true}
-                loading="eager"
+                className={`transform transition-all duration-300 group-hover:scale-105 ${
+                  preloadedImages[photo.image] ? 'opacity-100' : 'opacity-0'
+                }`}
+                priority={index < 4}
+                loading={index < 4 ? "eager" : "lazy"}
+                onLoad={() => {
+                  setPreloadedImages(prev => ({
+                    ...prev,
+                    [photo.image]: true
+                  }));
+                }}
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
@@ -100,23 +116,24 @@ const Gallery = () => {
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" 
+          onClick={() => setSelectedImage(null)}
+        >
           <div
             className="relative max-w-full max-h-[90vh] transform transition-transform duration-200 animate-fadeIn"
             onClick={(e) => e.stopPropagation()}
           >
-            {!preloadedImages[selectedImage.image] && <LoadingSpinner />}
             <Image
               src={selectedImage.image}
               alt="Selected photo"
-              width={800}
-              height={800}
+              width={1200}
+              height={1200}
               style={{ objectFit: "contain" }}
               className="rounded-lg max-h-[85vh] w-auto"
               priority={true}
-              loading="eager"
-              sizes="100vw"
-              quality={75}
+              quality={85}
+              sizes="95vw"
             />
           </div>
         </div>
