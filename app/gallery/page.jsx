@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 const photos = [
   { image: "/lokum5.jpg" },
@@ -15,18 +16,34 @@ const photos = [
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [preloadedImages, setPreloadedImages] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    photos.forEach((photo) => {
-      const img = new window.Image();
-      img.src = photo.image;
-      img.onload = () => {
-        setPreloadedImages(prev => ({
-          ...prev,
-          [photo.image]: true
-        }));
-      };
-    });
+    const loadImages = async () => {
+      try {
+        const promises = photos.map((photo) => {
+          return new Promise((resolve) => {
+            const img = new window.Image();
+            img.src = photo.image;
+            img.onload = () => {
+              setPreloadedImages(prev => ({
+                ...prev,
+                [photo.image]: true
+              }));
+              resolve();
+            };
+          });
+        });
+
+        await Promise.all(promises);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error loading images:', error);
+        setIsLoading(false);
+      }
+    };
+
+    loadImages();
   }, []);
 
   return (
@@ -41,12 +58,28 @@ const Gallery = () => {
           50% { background-position: 100% 50% }
           100% { background-position: 0% 50% }
         }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
       `}</style>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-2">
         {photos.map((photo, index) => (
           <div key={index} className="relative group cursor-pointer" onClick={() => setSelectedImage(photo)}>
             <div className="relative aspect-square overflow-hidden rounded-lg">
+              {!preloadedImages[photo.image] && <LoadingSpinner />}
               <Image
                 src={photo.image}
                 alt={`Photo ${index + 1}`}
@@ -69,9 +102,10 @@ const Gallery = () => {
       {selectedImage && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
           <div
-            className="relative max-w-full max-h-[90vh] transform transition-transform duration-200"
+            className="relative max-w-full max-h-[90vh] transform transition-transform duration-200 animate-fadeIn"
             onClick={(e) => e.stopPropagation()}
           >
+            {!preloadedImages[selectedImage.image] && <LoadingSpinner />}
             <Image
               src={selectedImage.image}
               alt="Selected photo"
