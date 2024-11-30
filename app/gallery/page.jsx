@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import LoadingSpinner from "../../components/ui/LoadingSpinner";
 
 const photos = [
   { image: "/lokum5.jpg" },
