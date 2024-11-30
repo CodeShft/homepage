@@ -28,6 +28,7 @@ const info_ = [
 const Contact = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [showContactInfo, setShowContactInfo] = useState(false);
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -35,25 +36,61 @@ const Contact = () => {
     phone: ''
   });
 
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.firstname.trim()) {
+      newErrors.firstname = 'First name is required';
+    }
+    
+    if (!formData.lastname.trim()) {
+      newErrors.lastname = 'Last name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSuccess(true);
+    
+    if (!validateForm()) {
+      return;
+    }
 
-    // Form verilerini sıfırla
+    setIsSuccess(true);
     setFormData({
       firstname: '',
       lastname: '',
       email: '',
       phone: ''
     });
+    setErrors({});
 
     setTimeout(() => {
       setIsSuccess(false);
@@ -68,45 +105,73 @@ const Contact = () => {
           <div className="w-full max-w-xl">
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-3 bg-[#27272c] min-h-[280px]">
               <div className="mb-4">
-                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2">🧡 Do you want to adopt me?</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-amber-700 mb-2"> Do you want to adopt me?</h3>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <Input
-                  type="text"
-                  name="firstname"
-                  placeholder="First Name"
-                  value={formData.firstname}
-                  onChange={handleInputChange}
-                  className="bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50"
-                />
-                <Input
-                  type="text"
-                  name="lastname"
-                  placeholder="Last Name"
-                  value={formData.lastname}
-                  onChange={handleInputChange}
-                  className="bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50"
-                />
+                <div className="flex flex-col">
+                  <Input
+                    type="text"
+                    name="firstname"
+                    placeholder="First Name *"
+                    value={formData.firstname}
+                    onChange={handleInputChange}
+                    className={`bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50 ${
+                      errors.firstname ? 'ring-1 ring-red-500' : ''
+                    }`}
+                  />
+                  {errors.firstname && (
+                    <span className="text-red-500 text-xs mt-1">{errors.firstname}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <Input
+                    type="text"
+                    name="lastname"
+                    placeholder="Last Name *"
+                    value={formData.lastname}
+                    onChange={handleInputChange}
+                    className={`bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50 ${
+                      errors.lastname ? 'ring-1 ring-red-500' : ''
+                    }`}
+                  />
+                  {errors.lastname && (
+                    <span className="text-red-500 text-xs mt-1">{errors.lastname}</span>
+                  )}
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50"
-                />
-                <Input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50"
-                />
+                <div className="flex flex-col">
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Email *"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50 ${
+                      errors.email ? 'ring-1 ring-red-500' : ''
+                    }`}
+                  />
+                  {errors.email && (
+                    <span className="text-red-500 text-xs mt-1">{errors.email}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone *"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={`bg-[#1d1d21] border-0 h-10 text-sm focus:ring-1 focus:ring-amber-700/50 ${
+                      errors.phone ? 'ring-1 ring-red-500' : ''
+                    }`}
+                  />
+                  {errors.phone && (
+                    <span className="text-red-500 text-xs mt-1">{errors.phone}</span>
+                  )}
+                </div>
               </div>
 
               <div className="grid gap-4">
