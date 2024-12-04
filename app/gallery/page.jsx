@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import LoadingSpinner from "../../components/ui/LoadingSpinner";
 
 const photos = [
   { image: "/lokum5.jpg" },
@@ -70,8 +69,18 @@ const Gallery = () => {
           }
         }
 
+        @keyframes pulse {
+          0% { opacity: 1 }
+          50% { opacity: 0.5 }
+          100% { opacity: 1 }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        .animate-pulse {
+          animation: pulse 1.5s ease-out infinite;
         }
       `}</style>
 
@@ -87,7 +96,11 @@ const Gallery = () => {
             }}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg">
-              {!preloadedImages[photo.image] && <LoadingSpinner />}
+              {!preloadedImages[photo.image] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-10">
+                  <p className="text-white text-lg font-medium animate-pulse">Açılıyor...</p>
+                </div>
+              )}
               <Image
                 src={photo.image}
                 alt={`Photo ${index + 1}`}
