@@ -147,10 +147,21 @@ const Gallery = () => {
         ))}
       </div>
 
+      {loadingImageIndex !== null && (
+        <div className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center">
+          <div className="bg-white/10 px-8 py-4 rounded-lg backdrop-blur-sm">
+            <p className="text-white text-xl font-medium tracking-wider animate-pulse">✧ Loading...✧</p>
+          </div>
+        </div>
+      )}
+
       {selectedImage && (
         <div 
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" 
-          onClick={() => setSelectedImage(null)}
+          onClick={() => {
+            setSelectedImage(null);
+            setLoadingImageIndex(null);
+          }}
         >
           <div
             className="relative max-w-full max-h-[90vh] transform transition-transform duration-200 animate-fadeIn"
