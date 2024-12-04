@@ -106,20 +106,6 @@ const Gallery = () => {
             }}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg">
-              {!preloadedImages[photo.image] && (
-                <div className="absolute inset-0 flex items-center justify-center loading-backdrop z-10">
-                  <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                    <p className="text-white text-base font-medium tracking-wider animate-pulse">✧ Loading ✧</p>
-                  </div>
-                </div>
-              )}
-              {loadingImageIndex === index && (
-                <div className="absolute inset-0 flex items-center justify-center loading-backdrop z-10">
-                  <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                    <p className="text-white text-base font-medium tracking-wider animate-pulse">✧ Loading ✧</p>
-                  </div>
-                </div>
-              )}
               <Image
                 src={photo.image}
                 alt={`Photo ${index + 1}`}
