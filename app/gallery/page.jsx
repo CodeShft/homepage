@@ -16,6 +16,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [preloadedImages, setPreloadedImages] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingImageIndex, setLoadingImageIndex] = useState(null);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -70,9 +71,14 @@ const Gallery = () => {
         }
 
         @keyframes pulse {
-          0% { opacity: 1 }
-          50% { opacity: 0.5 }
-          100% { opacity: 1 }
+          0% { opacity: 1; transform: scale(1) }
+          50% { opacity: 0.7; transform: scale(0.98) }
+          100% { opacity: 1; transform: scale(1) }
+        }
+
+        .loading-backdrop {
+          backdrop-filter: blur(8px);
+          background: rgba(0, 0, 0, 0.4);
         }
 
         .animate-fadeIn {
@@ -80,7 +86,7 @@ const Gallery = () => {
         }
 
         .animate-pulse {
-          animation: pulse 1.5s ease-out infinite;
+          animation: pulse 1.2s ease-in-out infinite;
         }
       `}</style>
 
@@ -91,14 +97,27 @@ const Gallery = () => {
             className="relative group cursor-pointer" 
             onClick={() => {
               if (preloadedImages[photo.image]) {
-                setSelectedImage(photo);
+                setLoadingImageIndex(index);
+                setTimeout(() => {
+                  setSelectedImage(photo);
+                  setLoadingImageIndex(null);
+                }, 500);
               }
             }}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg">
               {!preloadedImages[photo.image] && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-10">
-                  <p className="text-white text-lg font-medium animate-pulse">Açılıyor...</p>
+                <div className="absolute inset-0 flex items-center justify-center loading-backdrop z-10">
+                  <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <p className="text-white text-base font-medium tracking-wider animate-pulse">✧ Loading ✧</p>
+                  </div>
+                </div>
+              )}
+              {loadingImageIndex === index && (
+                <div className="absolute inset-0 flex items-center justify-center loading-backdrop z-10">
+                  <div className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <p className="text-white text-base font-medium tracking-wider animate-pulse">✧ Loading ✧</p>
+                  </div>
                 </div>
               )}
               <Image
