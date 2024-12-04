@@ -51,7 +51,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="min-h-[8vh] flex flex-col justify-start relative overflow-hidden mt-8 sm:mt-4">
+    <section className="min-h-[8vh] flex flex-col justify-start relative overflow-hidden -mt-4">
       <div className="container px-4 max-w-3xl mx-auto">
         {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
@@ -76,7 +76,7 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 gap-6 sm:gap-4"
+          className="grid grid-cols-1 gap-4 sm:gap-2"
         >
           {features.map((feature, index) => {
             const cardColor = colors[index % colors.length];
@@ -90,10 +90,10 @@ const Services = () => {
                   y: 0,
                   transition: { delay: 0.4 + index * 0.2, duration: 0.6 },
                 }}
-                className={`flex flex-col justify-center gap-1 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-sm mx-auto relative p-6 sm:p-4 ${cardColor} ${hoverColor}`}
+                className={`flex flex-col justify-center gap-1 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-sm mx-auto relative ${cardColor} ${hoverColor}`}
               >
                 {/* Card Content */}
-                <div className="flex flex-col justify-between h-full relative z-10">
+                <div className="p-2 flex flex-col justify-between h-full relative z-10">
                   {/* Top Section */}
                   <div className="w-full flex justify-between items-center">
                     <div className="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 text-black rounded-full font-extrabold text-lg">
