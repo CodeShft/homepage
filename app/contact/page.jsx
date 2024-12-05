@@ -187,7 +187,10 @@ const Contact = () => {
 
               <button
                 type="button"
-                onClick={() => setShowContactInfo(!showContactInfo)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowContactInfo(!showContactInfo);
+                }}
                 className="mt-4 h-9 w-full rounded-md bg-[#1d1d21] text-white text-sm font-medium hover:bg-[#2d2d31] transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <span>Contact Information</span>
