@@ -32,7 +32,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col px-4 py-8 bg-primary fixed top-0 right-0 h-full w-80">
 
-        <SheetTitle className="sr-only">Mobil Menü</SheetTitle>
+        <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
 
         {/* Logo */}
         <div className="mt-12 mb-8 text-center text-2xl">
