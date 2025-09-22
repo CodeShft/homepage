@@ -18,19 +18,22 @@ const features = [
   {
     num: "01",
     title: "Sleeps a lot",
-    description: "She sleeps a lot and likes to sleep upstairs and next to you.",
+    description:
+      "She sleeps a lot and likes to sleep upstairs and next to you.",
     href: "",
   },
   {
     num: "02",
     title: "Eats too much",
-    description: "She is very gluttonous, she can wake you up to eat, especially she loves chips.",
+    description:
+      "She is very gluttonous, she can wake you up to eat, especially she loves chips.",
     href: "",
   },
   {
     num: "03",
     title: "Prone to escape",
-    description: "You should close the windows and doors, she can escape immediately.",
+    description:
+      "You should close the windows and doors, she can escape immediately.",
     href: "",
   },
 ];
@@ -51,9 +54,8 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="min-h-[8vh] flex flex-col justify-start relative overflow-hidden -mt-4">
+    <section className="h-screen flex flex-col justify-start relative overflow-hidden -mt-4">
       <div className="container px-4 max-w-3xl mx-auto">
-        {/* Cat Animation */}
         <div className="cat-animation absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-10">
           <div
             className="cat"
@@ -65,7 +67,6 @@ const Services = () => {
               transition: "transform 0.1s ease-out",
             }}
           >
-            {/* Cat icon: GiCat icon */}
             <GiCat className="text-4xl text-white" />
           </div>
         </div>
@@ -92,7 +93,6 @@ const Services = () => {
                 }}
                 className={`flex flex-col justify-center gap-1 group border border-transparent rounded-lg shadow-lg transition-all duration-300 max-w-sm mx-auto relative ${cardColor} ${hoverColor}`}
               >
-                {/* Card Content */}
                 <div className="p-2 flex flex-col justify-between h-full relative z-10">
                   {/* Top Section */}
                   <div className="w-full flex justify-between items-center">
@@ -107,7 +107,7 @@ const Services = () => {
                       <BsArrowDownRight className="text-gray-800 text-lg sm:text-xl" />
                     </Link>
                   </div>
-                  {/* Title */}
+
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
@@ -119,7 +119,7 @@ const Services = () => {
                   >
                     {feature.title}
                   </motion.h2>
-                  {/* Description */}
+
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
@@ -138,10 +138,10 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* Cat movement CSS */}
-      <style jsx>{`
+      <style jsx global>{`
         body {
           cursor: none;
+          overflow: hidden !important;
         }
 
         .cat-animation {
