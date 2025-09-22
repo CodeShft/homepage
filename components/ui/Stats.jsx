@@ -2,10 +2,14 @@
 
 import CountUp from "react-countup";
 
+const birthYear = 2018;
+const currentYear = new Date().getFullYear();
+const age = currentYear - birthYear;
+
 const stats = [
   {
     num: 1,
-    text: "6 Years old a cat",
+    text: `${age} Years old a cat`,
   },
   {
     num: 2,
